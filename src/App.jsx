@@ -14,7 +14,28 @@ function App() {
     prevArrow: <PrevArrow />,
   };
   return (
-
+    <div className="">
+      <Slider {...settings}>
+        <div>
+          <Product className="mx-3" />
+        </div>
+        <div>
+          <Product className="mx-3" />
+        </div>
+        <div>
+          <Product className="mx-3" />
+        </div>
+        <div>
+          <Product className="mx-3" />
+        </div>
+        <div>
+          <Product className="mx-3" />
+        </div>
+        <div>
+          <Product className="mx-3" />
+        </div>
+      </Slider>
+    </div>
   );
 }
 
