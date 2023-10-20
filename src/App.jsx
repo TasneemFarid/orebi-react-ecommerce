@@ -1,41 +1,26 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import NextArrow from "./components/NextArrow";
-import PrevArrow from "./components/PrevArrow";
-import Product from "./components/Product";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function App() {
-  const settings = {
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
+  let [all, setAll] = useState([]);
+
+  useEffect(() => {
+    async function all() {
+      let data = await axios.get("https://restcountries.com/v3.1/all");
+      setAll(data.data);
+      // console.log(data.data);
+    }
+    all();
+  }, []);
+
   return (
-    <div className="">
-      <Slider {...settings}>
-        <div>
-          <Product className="mx-3" />
-        </div>
-        <div>
-          <Product className="mx-3" />
-        </div>
-        <div>
-          <Product className="mx-3" />
-        </div>
-        <div>
-          <Product className="mx-3" />
-        </div>
-        <div>
-          <Product className="mx-3" />
-        </div>
-        <div>
-          <Product className="mx-3" />
-        </div>
-      </Slider>
-    </div>
+    <>
+      <select>
+        {all.map((item) => (
+          <option>{item.name.common}</option>
+        ))}
+      </select>
+    </>
   );
 }
 
