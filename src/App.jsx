@@ -1,27 +1,24 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  let [all, setAll] = useState([]);
-
+  let [all, setAll] = useState(new Array(31));
+  let [data, setData] = useState([]);
   useEffect(() => {
-    async function all() {
-      let data = await axios.get("https://restcountries.com/v3.1/all");
-      setAll(data.data);
-      // console.log(data.data);
+    let arr = [];
+    for (let i = 1; i <= all.length; i++) {
+      arr.push(i);
     }
-    all();
+    setData(arr);
   }, []);
+  console.log(data);
 
-  return (
-    <>
-      <select>
-        {all.map((item) => (
-          <option>{item.name.common}</option>
-        ))}
-      </select>
-    </>
-  );
+  return <>
+  <select name="" id="">
+    {data.map(item=>(
+      <option>{item}</option>
+    ))}
+  </select>
+  </>;
 }
 
 export default App;
