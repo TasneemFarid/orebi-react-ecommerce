@@ -1,24 +1,35 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import data from "./components/division/text";
 
 function App() {
-  let [all, setAll] = useState(new Array(31));
-  let [data, setData] = useState([]);
-  useEffect(() => {
-    let arr = [];
-    for (let i = 1; i <= all.length; i++) {
-      arr.push(i);
+  let [country, setCountry] = useState(data);
+  let [district, setDistrict] = useState("");
+  let handleChange = (e) => {
+    if (e.target.value != "Select Division") {
+      setDistrict(e.target.value);
     }
-    setData(arr);
-  }, []);
-  console.log(data);
+  };
 
-  return <>
-  <select name="" id="">
-    {data.map(item=>(
-      <option>{item}</option>
-    ))}
-  </select>
-  </>;
+  return (
+    <>
+      <select onChange={handleChange} name="" id="">
+        <option value="">Select Division</option>
+        {country.map((item) => (
+          <option>{item.name}</option>
+        ))}
+      </select>
+
+      <select name="" id="">
+        <option value="">Select District</option>
+        {!district && <option value="">Please a Select District</option>}
+        {country.map(
+          (item) =>
+            item.name == district &&
+            item.district.map((ite) => <option>{ite.name}</option>)
+        )}
+      </select>
+    </>
+  );
 }
 
 export default App;
