@@ -10,6 +10,9 @@ export default {
       '39': "39px",
       '49': "49px",
     },
+    colors: {
+      offwhite: "#f0f0f0",
+    },
   },
   plugins: [],
 };
