@@ -1,12 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
+import Navbar from "./layouts/Navbar";
+import Searchbar from "./layouts/Searchbar";
 
 const RootLayouts = () => {
   return (
     <>
-      <div>Navbar</div>
+      <Navbar />
+      <Searchbar />
       <Outlet />
-      <div>Footer</div>
+      <Footer />
     </>
   );
 };
