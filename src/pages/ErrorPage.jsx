@@ -1,10 +1,10 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import error from "../../assets/404.svg";
-import Button from "../Button";
-import Container from "../Container";
-import Image from "../Image";
+import error from "../assets/404.svg";
+import Button from "../components/Button";
+import Container from "../components/Container";
+import Image from "../components/Image";
 
 const ErrorPage = () => {
   return (

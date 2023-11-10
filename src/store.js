@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slices/counterSlice"
+import breadcrumbSlices from "./slices/breadcrumbSlices";
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    breadcrumb: breadcrumbSlices,
   },
 });

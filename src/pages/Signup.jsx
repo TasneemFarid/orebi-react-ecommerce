@@ -1,6 +1,6 @@
 import React from "react";
-import Breadcrumb from "../Breadcrumb";
-import Container from "../Container";
+import Breadcrumb from "../components/Breadcrumb";
+import Container from "../components/Container";
 
 const Signup = () => {
   return (

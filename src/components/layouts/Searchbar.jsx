@@ -4,6 +4,7 @@ import { BiSolidUser } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import Container from "../Container";
 import Flex from "../Flex";
 
@@ -26,7 +27,9 @@ const Searchbar = () => {
           </div>
           <Flex className="w-1/5 gap-10 justify-end">
             <Flex>
-              <BiSolidUser />
+              <Link to="/sign-up">
+                <BiSolidUser />
+              </Link>
               <AiFillCaretDown />
             </Flex>
             <FaShoppingCart />
