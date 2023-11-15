@@ -9,7 +9,7 @@ import PortionHeading from "./PortionHeading";
 
 const Footer = () => {
   return (
-    <footer className="bg-ash py-14">
+    <footer className="bg-ash py-14 mt-10">
       <Container>
         <Flex className="">
           <div className="w-2/12">
