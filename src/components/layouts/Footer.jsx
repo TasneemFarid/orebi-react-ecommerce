@@ -1,15 +1,15 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import logo from "../assets/logo.svg";
-import Container from "./Container";
-import Flex from "./Flex";
-import Image from "./Image";
-import List from "./List";
-import PortionHeading from "./PortionHeading";
+import Container from "../Container";
+import Flex from "../Flex";
+import Image from "../Image";
+import List from "../List";
+import PortionHeading from "../PortionHeading";
+import logo from "../../assets/logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-ash py-14 mt-10">
+    <footer className="bg-ash py-14 mt-32">
       <Container>
         <Flex className="">
           <div className="w-2/12">
