@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 import Container from "../components/Container";
 import Flex from "../components/Flex";
 import Input from "../components/Input";
@@ -92,7 +93,41 @@ const Signup = () => {
           </div>
         </Flex>
       </div>
-      <div className="border-t border-solid border-offwhite py-12">bg</div>
+      <div className="border-t border-solid border-offwhite py-12">
+        <div>
+          <input id="test" type="checkbox" className="peer/test" hidden />
+          <label
+            for="test"
+            className="relative pl-5 before:w-3 before:h-3 before:border before:border-solid before:border-para before:absolute before:top-1.5 before:left-0 before:content[''] after:w-2 after:h-2 after:border after:border-solid after:border-white after:absolute after:top-2 after:left-0.5 after:content[''] after:peer-checked/test:bg-para"
+          >
+            I have read and agree to the Privacy Policy
+          </label>
+        </div>
+        <div className="my-5">
+          <span className="mr-8">Subscribe Newsletter</span>
+          <input
+            id="yes"
+            name="news"
+            type="radio"
+            className="peer/yes"
+            hidden
+          />
+          <label
+            for="yes"
+            className="relative pl-5 pr-10 before:w-3 before:h-3 before:border before:border-solid before:border-para before:absolute before:top-1.5 before:left-0 before:content[''] after:w-2 after:h-2 after:border after:border-solid after:border-white after:absolute after:top-2 after:left-0.5 after:content[''] after:peer-checked/yes:bg-para"
+          >
+            Yes
+          </label>
+          <input id="no" name="news" type="radio" className="peer/no" hidden />
+          <label
+            for="no"
+            className="relative pl-5 before:w-3 before:h-3 before:border before:border-solid before:border-para before:absolute before:top-1.5 before:left-0 before:content[''] after:w-2 after:h-2 after:border after:border-solid after:border-white after:absolute after:top-2 after:left-0.5 after:content[''] after:peer-checked/no:bg-para"
+          >
+            No
+          </label>
+        </div>
+        <Button text="Log in" />
+      </div>
     </Container>
   );
 };
