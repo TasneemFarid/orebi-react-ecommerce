@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
 import { BiSolidUser } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { pagename } from "../../slices/breadcrumbSlices";
 import Container from "../Container";
 import Flex from "../Flex";
 
 const Searchbar = () => {
+  let [open, setOpen] = useState(false);
   let dispatch = useDispatch();
   let handleBreadCrumb = (name) => {
     dispatch(pagename(name));
   };
+  
+  let cart = useSelector((state) => state.cart.cartitem);
   return (
     <section className="py-6 mb-32 bg-ash">
       <Container>
@@ -38,9 +41,20 @@ const Searchbar = () => {
               </Link>
               <AiFillCaretDown />
             </Flex>
-            <FaShoppingCart />
+            <FaShoppingCart onClick={() => setOpen(true)} />
+            {cart.length}
           </Flex>
         </Flex>
+        {open && (
+          <div className="w-2/6 bg-ash h-screen absolute top-0 right-0 z-10">
+            <FaShoppingCart onClick={() => setOpen(false)} />
+            <ul>
+              {cart.map(item=>(
+                <li>{item.title} {item.price} - {item.quantity}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Container>
     </section>
   );
