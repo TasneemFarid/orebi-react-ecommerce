@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { BsFillCartFill } from "react-icons/bs";
 import { TfiReload } from "react-icons/tfi";
@@ -22,8 +22,29 @@ const Product = ({ className, heading }) => {
       })
     );
   };
+
+  let [count, setCount] = useState(0);
+  let [error, setError] = useState(false);
+  let countRef = useRef(0);
+
+  let handleClick1 = () => {
+    count++;
+    setCount(count);
+  };
+  let handleClick2 = () => {
+    countRef.current++;
+    if (countRef.current == 5) {
+      setError(true);
+    }
+  };
   return (
     <div className={className}>
+      <h1>{count}</h1>
+      <button onClick={handleClick1}>Click</button>
+      <h1>{countRef.current}</h1>
+      <button onClick={handleClick2}>Click</button>
+      {error && <p>blocked for 5 mins</p>}
+
       <div className="relative overflow-hidden group">
         <Image src={productImage} className="w-full" />
         <Badge text="New" />
