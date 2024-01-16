@@ -1,18 +1,19 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Button from "./components/Button";
-import RootLayouts from "./components/RootLayouts";
-import ErrorPage from "./pages/ErrorPage";
-import Signup from "./pages/Signup";
 import Product from "./components/Product";
-import Login from "./pages/Login";
-import Contacts from "./pages/Contacts";
+import RootLayouts from "./components/RootLayouts";
 import Checkout from "./pages/Checkout";
+import Contacts from "./pages/Contacts";
+import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
