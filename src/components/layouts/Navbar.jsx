@@ -8,11 +8,13 @@ import Flex from "../Flex";
 import Image from "../Image";
 import List from "../List";
 
+
 const Navbar = () => {
   let dispatch = useDispatch();
   let handleBreadCrumb = (name) => {
     dispatch(pagename(name));
   };
+    
   return (
     <nav className="py-8">
       <Container>

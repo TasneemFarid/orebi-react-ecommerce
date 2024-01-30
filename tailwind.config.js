@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// const colors = require("tailwindcss/colors");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -12,7 +11,6 @@ export default {
         49: "49px",
       },
       colors: {
-        // ...colors,
         offwhite: "#f0f0f0",
         ash: "#F5F5F3",
         lightash: "#6D6D6D",

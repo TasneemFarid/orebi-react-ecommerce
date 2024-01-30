@@ -11,7 +11,7 @@ const Signup = () => {
   const pageName = useSelector((state) => state.breadcrumb.previousname);
   return (
     <Container>
-      <Subheading text="Sign Up" />
+      <Subheading text="Sign Up" className="mt-32" />
       <Flex className="mt-3 text-lightash">
         <Link to={pageName == "Home" ? "/" : `/${pageName.toLowerCase()}`}>
           {pageName}

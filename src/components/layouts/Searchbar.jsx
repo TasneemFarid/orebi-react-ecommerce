@@ -36,7 +36,7 @@ const Searchbar = () => {
   }, [cart]);
 
   return (
-    <section className="py-6 mb-32 bg-ash">
+    <section className="py-6 bg-ash">
       <Container>
         <Flex className="justify-between items-center">
           <Flex className="w-1/5 gap-2.5 items-center">

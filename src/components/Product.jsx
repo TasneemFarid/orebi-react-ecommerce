@@ -26,7 +26,7 @@ const Product = ({ className, heading }) => {
   return (
     <div className={className}>
       <div className="relative overflow-hidden group">
-        <Image src={productImage} className="w-full" />
+        <Image src={productImage} className="" />
         <Badge text="New" />
         <div className="bg-white absolute -bottom-32 left-0 w-full p-6 group-hover:bottom-0 duration-500">
           <Flex className="items-center justify-end gap-x-2">
