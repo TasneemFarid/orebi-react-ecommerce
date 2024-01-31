@@ -1,4 +1,7 @@
 import React, { useRef } from "react";
+import { FaTruck } from "react-icons/fa";
+import { MdLooksTwo } from "react-icons/md";
+import { SlReload } from "react-icons/sl";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import ad1 from "../assets/ad1.png";
@@ -51,16 +54,11 @@ const Home = () => {
     autoplay: true,
     dots: true,
     appendDots: (dots) => (
-      <div class="banner">
+      <div>
         <ul> {dots} </ul>
       </div>
     ),
-    customPaging: (i) => (
-      <button
-      >
-        0{i + 1}
-      </button>
-    ),
+    customPaging: (i) => <button>0{i + 1}</button>,
   };
   return (
     <>
@@ -74,10 +72,27 @@ const Home = () => {
         <div>
           <Image src={banner} className="w-full" />
         </div>
-  
       </Slider>
-      <Container className="mt-16">
-        <Flex className="justify-between">
+
+      <div className="border-2 border-offwhite py-6 px-40">
+        <Flex className="justify-between font-dm font-normal text-base text-lightash">
+          <Flex className="gap-2 items-center">
+            <MdLooksTwo className="text-2xl text-dark" />
+            Two years warranty
+          </Flex>
+          <Flex className="gap-2 items-center">
+            <FaTruck className="text-2xl text-dark" />
+            Free shipping
+          </Flex>
+          <Flex className="gap-2 items-center">
+            <SlReload className="text-2xl text-dark" />
+            Return policy in 30 days
+          </Flex>
+        </Flex>
+      </div>
+
+      <Container className="">
+        <Flex className="gap-5 my-32">
           <div className="w-1/2">
             <Image src={ad1} className="w-full" />
           </div>
@@ -87,7 +102,7 @@ const Home = () => {
           </div>
         </Flex>
 
-        <Subheading text="New Arrivals" className="" />
+        <Subheading text="New Arrivals" className="mb-12" />
         <Slider {...settings}>
           <div className="w-24">
             <Product heading="Product 1" />
@@ -109,7 +124,7 @@ const Home = () => {
           </div>
         </Slider>
 
-        <Subheading text="Best Sellers" className="" />
+        <Subheading text="Best Sellers" className="mt-32 mb-12" />
         <Flex className="justify-between">
           <div className="w-24">
             <Product heading="Product 1" />
@@ -125,9 +140,9 @@ const Home = () => {
           </div>
         </Flex>
 
-        <Image src={ad4} />
+        <Image src={ad4} className="mt-32" />
 
-        <Subheading text="Special Offers" className="" />
+        <Subheading text="Special Offers" className="mt-32 mb-12" />
         <Flex className="justify-between">
           <div className="w-24">
             <Product heading="Product 1" />
