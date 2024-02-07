@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
 import { FaTruck } from "react-icons/fa";
 import { MdLooksTwo } from "react-icons/md";
 import { SlReload } from "react-icons/sl";
@@ -18,6 +19,19 @@ import Product from "../components/Product";
 import Subheading from "../components/Subheading";
 
 const Home = () => {
+  let [product, setProduct] = useState([]);
+
+  useEffect(() => {
+    async function mypro() {
+      let data = await axios.get(
+        "http://localhost:1337/api/products?populate=*"
+      );
+      setProduct(data.data.data);
+      console.log(data.data.data);
+    }
+    mypro();
+  }, []);
+
   let dropRef = useRef(null);
   let handleClick = (e) => {
     if (e.target.classList[0] == "clickbtn") {
@@ -126,18 +140,15 @@ const Home = () => {
 
         <Subheading text="Best Sellers" className="mt-32 mb-12" />
         <Flex className="justify-between">
-          <div className="w-24">
-            <Product heading="Product 1" />
-          </div>
-          <div className="w-24">
-            <Product heading="Product 2" />
-          </div>
-          <div className="w-24">
-            <Product heading="Product 3" />
-          </div>
-          <div className="w-24">
-            <Product heading="Product 4" />
-          </div>
+          {product.map((item) => (
+            <div className="w-24">
+              <Product
+                heading={item.attributes.title}
+                image={item.attributes.image.data.attributes.url} price={item.attributes.price}
+                badge={item.attributes.badge}
+              />
+            </div>
+          ))}
         </Flex>
 
         <Image src={ad4} className="mt-32" />

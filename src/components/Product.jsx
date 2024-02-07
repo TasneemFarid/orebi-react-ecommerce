@@ -10,7 +10,7 @@ import Flex from "./Flex";
 import Image from "./Image";
 import PortionHeading from "./PortionHeading";
 
-const Product = ({ className, heading }) => {
+const Product = ({ className, heading, image, price }) => {
   let dispatch = useDispatch();
   let handleCart = () => {
     dispatch(
@@ -26,7 +26,7 @@ const Product = ({ className, heading }) => {
   return (
     <div className={className}>
       <div className="relative overflow-hidden group">
-        <Image src={productImage} className="" />
+        <Image src={`http://localhost:1337${image}`} className="" />
         <Badge text="New" />
         <div className="bg-white absolute -bottom-32 left-0 w-full p-6 group-hover:bottom-0 duration-500">
           <Flex className="items-center justify-end gap-x-2">
@@ -54,7 +54,7 @@ const Product = ({ className, heading }) => {
       </div>
       <Flex className="justify-between mt-4">
         <PortionHeading text={heading} />
-        <p className="font-dm text-base font-normal text-[#767676]">$44.00</p>
+        <p className="font-dm text-base font-normal text-[#767676]">{price}</p>
       </Flex>
     </div>
   );
